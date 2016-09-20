@@ -11,32 +11,32 @@ docker ps
 
 docker pull
 ```
-#redircect port 8080 locally, 80 on the container
+### redircect port 8080 locally, 80 on the container
 ```
 docker run -d -p 8080:80 <container name>
 
 docker exec -i -t 08e996ddbd19 ifconfig
 ```
-## create a new image from a container !! like GitHub
+### create a new image from a container !! like GitHub
 ```
 docker commit 4f4e2bc0bb29(container) centos6:withupdates
 
 docker inspect stoic_brattain | grep IPA
 ```
-## attach to containers shell 
+### attach to containers shell 
 ```
 docker attach <container>
 ```
-## remove images
+### remove images
 ```
 docker rmi <image>
 ```
-#remove containers
+### remove containers
 ```
 docker rm <container>
 cat repositories-devicemapper | python -mjson.tool
 ```
-## Dockerfile 
+### Dockerfile 
 ```
 FROM centos:centos6.7
 MAINTAINER Sean McGuigan <sean.mcguigan@fundingcircle.com>
