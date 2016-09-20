@@ -1,3 +1,4 @@
+## Docker primer
 ```
 docker commit -m="added json gem" -a"seanmc" 999529c50741(container name) seanmc/sinatra_image:v1.1
 
@@ -231,7 +232,7 @@ docker export my_container | gzip > my_container.tgz
 ```
 zcat my_container.tgz | docker import - my_new_image <- lower case
 ```
-### set DNS
+### set dns
 ```
 docker run -it --dns=8.8.8.8 --name="mycontainer1" docker.io/ubuntu:latest /bin/bash
 docker run -it --dns=8.8.8.8 --dns-search="mydomain.local" --name="mycontainer2" 
