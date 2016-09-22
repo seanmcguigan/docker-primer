@@ -238,3 +238,39 @@ docker run -it --dns=8.8.8.8 --name="mycontainer1" docker.io/ubuntu:latest /bin/
 docker run -it --dns=8.8.8.8 --dns-search="mydomain.local" --name="mycontainer2" 
 docker run -it --dns=8.8.8.8 --dns-search="mydomain.local" --name="mycontainer3" -v /local_vol -v /home/tcox/docker/mydata:/remote_vol docker.io/ubuntu:latest /bin/bash
 ```
+
+### start services on (boot) start
+```
+cat ~/.bashrc
+
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+/sbin/service httpd start
+/sbin/service openssh-server start
+```
+### create new image for web app
+```
+docker commit a8564e550bed centos6:baseweb
+```
+### connect to running container
+```
+docker exec -it app01 /bin/bash
+```
+### remove images
+docker images ubuntu | tail -n +2 | awk '{ print $1 ":" $2}' | xargs docker rmi
+
+### delete after user
+```
+docker run --it --rm --name=deleteme-container foo-images /bin/bash
+```
