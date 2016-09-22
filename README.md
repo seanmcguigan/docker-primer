@@ -268,8 +268,9 @@ docker commit a8564e550bed centos6:baseweb
 docker exec -it app01 /bin/bash
 ```
 ### remove images
+```
 docker images ubuntu | tail -n +2 | awk '{ print $1 ":" $2}' | xargs docker rmi
-
+```
 ### delete after user
 ```
 docker run --it --rm --name=deleteme-container foo-images /bin/bash
