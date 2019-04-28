@@ -40,7 +40,7 @@ cat repositories-devicemapper | python -mjson.tool
 ### Dockerfile 
 ```
 FROM centos:centos6.7
-MAINTAINER Sean McGuigan <sean.mcguigan@fundingcircle.com>
+MAINTAINER Sean McGuigan <sean.mcguigan@foo.com>
 
 RUN yum -y update; yum clean all
 RUN yum -y install httpd
@@ -57,7 +57,7 @@ docker build —no-cache -f ./loadbalancer -t seanmc:loadbalancer .
 ### Dockerfile
 ```
 FROM centos:centos6.7
-MAINTAINER seanmcguigan <seanmcguigan@gmx.com>
+MAINTAINER seanmcguigan <seanmcguigan@bar.com>
 
 RUN yum -y update; yum clean all
 RUN yum -y install httpd
