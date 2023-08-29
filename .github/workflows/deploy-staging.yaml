@@ -1,6 +1,6 @@
 name: skeleton application
 
-run-name: "Build and push ${DEPLOY_ENV_NAME} image"
+run-name: "Build and push staging image"
 
 on:
   push:
