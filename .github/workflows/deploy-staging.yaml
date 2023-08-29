@@ -35,3 +35,5 @@ jobs:
       - name: run bats
         run: bats -v
     
+      - name: echo
+        run: echo "$GITHUB_CONTEXT"
