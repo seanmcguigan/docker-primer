@@ -24,16 +24,8 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v3
       
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      
-      - name: install bats
-        run: npm install -g bats
-      
-      - name: run bats
-        run: bats -v
-    
-      - name: echo
-        run: echo "$GITHUB_CONTEXT"
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
